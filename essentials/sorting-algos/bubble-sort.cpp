@@ -3,9 +3,10 @@
 using namespace std;
 
 void bubble_sort(vector<int> & arr){
-    for (int times = 1; times<=arr.size()-1; times++){
+    for (int times = 1; times <= arr.size() - 1; times++){
         for (int j = 0; j < arr.size() - times; j++){
-            swap(arr[j], arr[j + 1]);
+            if(arr[j] > arr[j+1])
+                swap(arr[j], arr[j + 1]);
         }
     }
 }
@@ -17,7 +18,7 @@ int main(){
     for (auto itr = arr.begin(); itr != arr.end(); itr++){
         cout << *itr << ",";
     }
-    
+
     cout << endl;
 
     return 0;
